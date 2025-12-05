@@ -1,0 +1,560 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base theme variables */
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #8b5cf6;
+  --accent-color: #10b981;
+}
+
+/* Theme-specific CSS variables and styles */
+.pastel-cute {
+  --primary-color: #ec4899;
+  --secondary-color: #3b82f6;
+  --accent-color: #10b981;
+}
+
+.pastel-cute * {
+  transition: all 0.3s ease;
+}
+
+.sci-fi-pet {
+  --primary-color: #3b82f6;
+  --secondary-color: #8b5cf6;
+  --accent-color: #06b6d4;
+}
+
+.sci-fi-pet * {
+  transition: all 0.3s ease;
+}
+
+.nature-spirit {
+  --primary-color: #059669;
+  --secondary-color: #d97706;
+  --accent-color: #0ea5e9;
+}
+
+.nature-spirit * {
+  transition: all 0.3s ease;
+}
+
+.electronics {
+  --primary-color: #f97316;
+  --secondary-color: #eab308;
+  --accent-color: #22c55e;
+}
+
+.electronics * {
+  transition: all 0.3s ease;
+}
+
+/* Theme-specific background overrides */
+.pastel-cute {
+  background: linear-gradient(135deg, #fdf2f8 0%, #dbeafe 50%, #d1fae5 100%) !important;
+}
+
+.sci-fi-pet {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #581c87 100%) !important;
+}
+
+.nature-spirit {
+  background: linear-gradient(135deg, #ecfdf5 0%, #fef3c7 50%, #dbeafe 100%) !important;
+}
+
+.electronics {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(234, 179, 8, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #0f0a00 0%, #1a1410 25%, #1f1108 50%, #1a0f08 75%, #0d0a08 100%) !important;
+  position: relative;
+}
+
+.electronics::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(90deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(249, 115, 22, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.electronics::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+  background-size: 25px 25px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Glass morphism effects */
+.glass-effect {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced text readability with subtle gradients */
+.text-gradient-light {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.text-gradient-dark {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mirror finish effects */
+.mirror-surface {
+  background: linear-gradient(135deg, 
+    rgba(255,255,255,0.1) 0%, 
+    rgba(255,255,255,0.05) 25%, 
+    rgba(0,0,0,0.05) 50%, 
+    rgba(255,255,255,0.05) 75%, 
+    rgba(255,255,255,0.1) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Backlit text glow effects */
+.backlit-text {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbar for themes */
+.pastel-cute ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ec4899, #3b82f6);
+}
+
+.sci-fi-pet ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+}
+
+.nature-spirit ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #059669, #d97706);
+}
+
+.electronics ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #f97316, #eab308);
+}
+
+/* Animated objects positioning */
+.theme-objects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.theme-object {
+  position: absolute;
+  opacity: 0.4;
+  font-size: 1.8rem;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Enhanced animations with better performance */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-15px) rotate(2deg); 
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-12px) rotate(-2deg); 
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-8px) rotate(1deg); 
+  }
+}
+
+@keyframes glow {
+  0% { 
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+    transform: scale(1);
+  }
+  100% { 
+    filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-8px) scale(1.02); 
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { 
+    transform: rotate(-2deg) scale(1); 
+  }
+  25% { 
+    transform: rotate(2deg) scale(1.02); 
+  }
+  75% { 
+    transform: rotate(-1deg) scale(0.98); 
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { 
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin-slow {
+  from { 
+    transform: rotate(0deg); 
+  }
+  to { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes sway {
+  0%, 100% { 
+    transform: translateX(0px) rotate(0deg); 
+  }
+  25% { 
+    transform: translateX(8px) rotate(2deg); 
+  }
+  75% { 
+    transform: translateX(-8px) rotate(-2deg); 
+  }
+}
+
+@keyframes flutter {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) translateX(3px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-8px) translateX(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) translateX(-3px) rotate(-5deg);
+  }
+}
+
+@keyframes circuit-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 3px rgba(249, 115, 22, 0.4));
+  }
+  50% {
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.8));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Message animations */
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+/* Pastel Cute theme objects */
+.pastel-cute .heart-1 {
+  top: 10%;
+  left: 10%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.pastel-cute .heart-2 {
+  top: 20%;
+  right: 15%;
+  animation: float 3s ease-in-out infinite 1s;
+}
+
+.pastel-cute .star-1 {
+  top: 60%;
+  left: 5%;
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.pastel-cute .star-2 {
+  bottom: 20%;
+  right: 10%;
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+.pastel-cute .cloud-1 {
+  top: 30%;
+  left: 80%;
+  animation: sway 5s ease-in-out infinite;
+}
+
+/* Sci-Fi Pet theme objects */
+.sci-fi-pet .circuit-1 {
+  top: 15%;
+  left: 5%;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.sci-fi-pet .circuit-2 {
+  top: 70%;
+  right: 8%;
+  animation: glow 2s ease-in-out infinite alternate 1s;
+}
+
+.sci-fi-pet .orb-1 {
+  top: 40%;
+  left: 90%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.sci-fi-pet .orb-2 {
+  bottom: 30%;
+  left: 10%;
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.sci-fi-pet .satellite-1 {
+  top: 25%;
+  right: 20%;
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Nature Spirit theme objects */
+.nature-spirit .leaf-1 {
+  top: 10%;
+  left: 15%;
+  animation: flutter 3s ease-in-out infinite;
+}
+
+.nature-spirit .leaf-2 {
+  top: 50%;
+  right: 10%;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.nature-spirit .butterfly-1 {
+  top: 30%;
+  left: 70%;
+  animation: flutter 2s ease-in-out infinite;
+}
+
+.nature-spirit .flower-1 {
+  bottom: 25%;
+  left: 8%;
+  animation: bounce-gentle 3s ease-in-out infinite;
+}
+
+.nature-spirit .bird-1 {
+  top: 20%;
+  right: 25%;
+  animation: float-delayed 4s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .theme-object {
+    font-size: 1.4rem;
+    opacity: 0.3;
+  }
+  
+  /* Hide some objects on mobile for cleaner look */
+  .theme-object:nth-child(n+6) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-object {
+    font-size: 1.2rem;
+    opacity: 0.25;
+  }
+  
+  /* Show only essential objects on small screens */
+  .theme-object:nth-child(n+4) {
+    display: none;
+  }
+}
+
+/* Ensure objects don't interfere with interactions */
+.theme-objects * {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Performance optimizations */
+.theme-object {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Smooth theme transitions */
+.theme-objects {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Hide objects during theme transitions */
+body.theme-transitioning .theme-objects {
+  opacity: 0;
+}
+
+/* Enhanced button hover effects */
+.btn-hover-scale {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.btn-hover-scale:active {
+  transform: scale(0.95);
+}
+
+/* Improved focus states for accessibility */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+/* Theme-specific focus rings */
+.pastel-cute .focus-ring {
+  @apply focus:ring-pink-500;
+}
+
+.sci-fi-pet .focus-ring {
+  @apply focus:ring-blue-400;
+}
+
+.nature-spirit .focus-ring {
+  @apply focus:ring-green-500;
+}
+
+.electronics .focus-ring {
+  @apply focus:ring-orange-500;
+}
